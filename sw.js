@@ -61,7 +61,7 @@ self.addEventListener('fetch', (ev) => {
         fetch(ev.request)
           .then((fetchRes) => {
             //TODO: check here for the 404 error
-            
+
             return caches.open(dynamicCache).then((cache) => {
               let copy = fetchRes.clone(); //make a copy of the response
               cache.put(ev.request, copy); //put the copy into the cache
@@ -80,7 +80,7 @@ self.addEventListener('fetch', (ev) => {
       );
     })
   ); //what do we want to send to the browser?
-};);
+});
 
 self.addEventListener('message', (ev) => {
   console.log(ev.data);
@@ -89,11 +89,11 @@ self.addEventListener('message', (ev) => {
     isOnline = ev.data.ONLINE;
     //we could confirm if actually online and send a message to the browser if not
     // use a fetch with method: HEAD to do this
-    // in the webpage-side code set a timer to resend the online message 
+    // in the webpage-side code set a timer to resend the online message
     // which will trigger this code again
   }
   //handle other messages from the browser...
-  //EG: CLEARDYNAMICCACHE, CLEARSTATICCACHE, LOADFILE, CONFIRMONLINE, 
+  //EG: CLEARDYNAMICCACHE, CLEARSTATICCACHE, LOADFILE, CONFIRMONLINE,
   //    GETFROMDB, etc
 });
 
