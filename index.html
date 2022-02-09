@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.css" />
     <title>Simple PWA</title>
+    <!--
+      delete .git folder   rm -Rf .git
+      git init
+      create repo on github for exercise 3.
+      git remote add origin REPOURL
+    -->
+    <!-- pwa manifest -->
+    <link rel="manifest" href="manifest.json" />
+    <!-- older android support (manifest uses theme_color)-->
+    <meta name="theme-color" content="#bada55" />
+    <!-- ios support  (manifest theme_color and icons)-->
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#bada55" />
   </head>
   <body>
     <header>
