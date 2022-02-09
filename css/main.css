@@ -18,3 +18,9 @@ body {
 .offline {
   /* something visual about being offline */
 }
+a[href],
+a:link,
+a:active,
+a:visited {
+  color: orangered;
+}
